@@ -1,0 +1,17 @@
+This file contains notes to project 'Elections'.
+
+The goal of the project is primarilly to train coding and data manipulation skills by the virtue of anallyzing election programmes. 
+The author selected 44 programmes of candidates of 2019 Ukrainian Presidential election. Such data was selected beacuse of Ukraining language of the data which creates additional challenges to practice. 
+Data was downloaded from official Central Election Committee of Ukraine website (http://www.cvk.gov.ua/pls/vp2019/WP001) as a bunch of .doc files and converted to txt with freeware online converter.
+Data was read by Python in Jupyter Notebook. All the texts were stored to a Pandas dataframe containing the names of each candidate, paths to files etc.
+After that the texts of election programmes were cleaned from unwanted characters and symbols. Unfortunatelly, not all of such symbols were deleted for an unknown reason. But since the number of remaining unwanted symbols was insignifficant, the author left them be in texts.
+Texts were tokenized after extracting them to list.
+Tokens were normalized using Pymorphy2 library.
+Stopwords were removed. Unfortunatelly, once again, not all of stopwords were deleted for an unknown reason. But since the number of remaining unwanted symbols was insignifficant, the author left them be in texts.
+After that each token of each programme was counted (top ten tokens of each programme) and these counts were placed into list of tuples.
+This list was imported into the dataframe.
+Next, the plotting function was created. The author iterated through the lines in dataframe to plot horizontal barcharts of most frequent words in every programme.
+Finally, same plot was made to all the tokens from all the programmes in dataset.
+
+The plots demonstrate main areas for future action for each candidate.
+While allmost all candidates  speak of Ukraine, Ukrainians and country, their "No.2" topics vary often: from business and economy to war and medicine. While some candidates speak mostly of Ukraine and touch other topics less, the other ones distribute their texts over many topics in even proportions. We can see also how certain words identify strategies of candidates: using words like "money" and "wealth" sound more like libertarian approach, while words like "state", "ensure" show features of command economy.
